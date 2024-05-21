@@ -1,13 +1,9 @@
 
-/**
- * @param {string} word
- * @return {number}
- */
-var minimumPushes = function (word) {
+function minimumPushes(word: string): number {
     const ALPHABET_SIZE = 26;
     const NUMBER_OF_BUTTONS = 8;
 
-    const frequency = new Array(ALPHABET_SIZE).fill(0);
+    const frequency: number[] = new Array(ALPHABET_SIZE).fill(0);
     for (let letter of word) {
         ++frequency[getASCII(letter) - getASCII('a')];
     }
@@ -25,10 +21,6 @@ var minimumPushes = function (word) {
     return minimumPushes;
 };
 
-/**
- * @param {string} letter
- * @return {number}
- */
-function getASCII(letter) {
+function getASCII(letter: string): number {
     return letter.codePointAt(0);
 }
